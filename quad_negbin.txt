@@ -1,0 +1,24 @@
+
+    model{
+
+    ## Priors
+    cf.q ~ dunif(0, 10)
+    cf.T0 ~ dunif(0, 20)
+    cf.Tm ~ dunif(28, 45)
+    cf.r ~ dunif(0, 100)
+
+    ## Likelihood
+    for(i in 1:N.obs){
+    trait[i] ~ dnegbin(p[i], cf.r)
+    p[i] <- cf.r / (cf.r + trait.mu[i])
+    trait.mu[i] <- -1 * cf.q * (temp[i] - cf.T0) * (temp[i] - cf.Tm) * (cf.Tm > temp[i]) * (cf.T0 < temp[i])
+
+    }
+
+    ## Derived Quantities and Predictions
+    for(i in 1:N.Temp.xs){
+    z.trait.mu.pred[i] <- -1 * cf.q * (Temp.xs[i] - cf.T0) * (Temp.xs[i] - cf.Tm) * (cf.Tm > Temp.xs[i]) * (cf.T0 < Temp.xs[i])
+    }
+
+    } # close model
+    
