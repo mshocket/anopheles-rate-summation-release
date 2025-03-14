@@ -36,7 +36,7 @@ Our pipeline uses the following packages for R:
 
 Follow the instructions for installing R and JAGS provided at the software download urls. 
 
-The code and the mosquito life table experiment data are available here: https://github.com/mshocket/anopheles-rate-summation. You can clone the GitHub repository to your computer or download it as as zip file. 
+The code and the mosquito life table experiment data are available here: https://github.com/mshocket/anopheles-rate-summation-release. You can clone the GitHub repository to your computer or download it as as zip file. 
 
 World Clim 1.4 historical data for the mapping analyses are available here: https://worldclim.org/data/v1.4/worldclim14.html. Download the 5 minute resolution data for average temperature. 
 
@@ -46,7 +46,7 @@ We created a short demo that fits one thermal performance curve (TPC) to data fr
 
 To run the demo, open the file `R-scripts/AnalysisDemo.R` in R Studio or your R environment of choice and run the script.
 
-You will need to set your working directory to the top-level anopheles-rate-summation directory.
+You will need to set your working directory to the top-level anopheles-rate-summation-release directory.
 
 ## 4. Instructions for Use
 
